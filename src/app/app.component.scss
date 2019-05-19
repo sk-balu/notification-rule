@@ -1,0 +1,37 @@
+@import '../styles/variables';
+
+:host{
+  .header{
+    width: 90%;
+    margin: 0 auto; 
+    h3{
+      display: inline-block;
+      margin-right: 40px;
+    }
+    nav {
+      display: inline-block;
+      width: 78%;
+      text-align: right;
+      button{
+        text-decoration: none;
+        margin-right: 10px;
+        font-size: 13px;
+        background: $black;
+        padding: 5px 10px;
+        color: $white;
+        height: 35px;
+        cursor: pointer;
+        &.create-btn {
+          background: $pale-pink;
+          border: 0;
+          color: $alizarin;
+        }
+        &.dashboard-btn {
+          background: $lavendar;
+          border: 0;
+          color: $cerulean-blue;
+        }
+      }
+    }
+  }
+}

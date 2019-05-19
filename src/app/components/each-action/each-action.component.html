@@ -1,0 +1,14 @@
+<div class="col" >
+
+  <ng-select [items]="conventions"
+             [searchable]=false
+             [clearable]=false
+             bindLabel="name"
+             bindValue="value"
+             [(ngModel)]="action.action"
+             (change)="actionChange($event)"></ng-select>
+</div>
+<div class="col" >
+  <input [(ngModel)]="action.value" (ngModelChange)="inputChange()" *ngIf="hasInput">
+</div>
+<ng-content></ng-content>

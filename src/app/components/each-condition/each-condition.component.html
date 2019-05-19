@@ -1,0 +1,31 @@
+<div class="col" >
+  <ng-select [items]="conventions.fields"
+             [searchable]=false
+             [clearable]=false
+             bindLabel="name"
+             bindValue="value"
+             [(ngModel)]="condition.field"
+             (change)="fieldChange($event)"></ng-select>
+</div>
+<div class="col" >
+  <ng-select [items]="conventions.predicates"
+             [searchable]=false
+             [clearable]=false
+             bindLabel="name"
+             bindValue="value"
+             [(ngModel)]="condition.predicate"
+             (change)="predicateChange($event)"></ng-select>
+</div>
+<div class="col" *ngIf="hasInput">
+  <input type="text"  [(ngModel)]="condition.value" (ngModelChange)="inputChange()">
+</div>
+<div class="col" *ngIf="hasDate">
+  <ng-select  [items]="conventions.dates"
+             [searchable]=false
+             [clearable]=false
+             bindLabel="name"
+             bindValue="value"
+             [(ngModel)]="condition.value"
+             (change)="dateChange($event)"></ng-select>
+</div>
+<ng-content></ng-content>

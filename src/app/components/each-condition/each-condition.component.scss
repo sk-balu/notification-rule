@@ -1,0 +1,24 @@
+@import '../../../styles/variables';
+
+:host{
+  display: table;
+  width: 100%;
+  height: 46px;
+
+  .col{
+    display: table-cell;
+    text-align: left;
+    width: 30%;
+    vertical-align: middle;
+    input {
+      height: 30px;
+      width: 200px;
+      font-size: 13px;
+      border: 0;
+      background: $white-smoke;
+      padding: 7px;
+      letter-spacing: 1px;
+      box-sizing: border-box;
+    }
+  }
+}

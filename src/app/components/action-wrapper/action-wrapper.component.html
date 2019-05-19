@@ -1,0 +1,8 @@
+<div *ngFor="let action of actions; let i = index">
+  <app-each-action [conventions]="conventions.actions" [action]="action" (update)="update($event, i)">
+    <div class="action-btns">
+      <img class="add-btn" src="src/assets/add.svg" (click)="addAction()">
+      <img class="remove-btn" src="src/assets/remove.svg" (click)="removeAction(i)">
+    </div>
+  </app-each-action>
+</div>

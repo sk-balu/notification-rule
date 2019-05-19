@@ -1,0 +1,28 @@
+<ng-container *ngIf="conventions">
+  <div class="header">
+    <input type="text" class="rule-name" [(ngModel)]="rule.name">
+    <button routerLink="/dashboard">Cancel</button>
+    <button *ngIf="isCreate" class="primary" (click)="save()">Save</button>
+    <button *ngIf="!isCreate" class="primary" (click)="update()">Update</button>
+  </div>
+
+  <div class="instruction">
+    If <ng-select [items]="conventions.conditions"
+                  bindLabel="name"
+                  bindValue="value"
+                  [searchable]=false
+                  [clearable]=false
+                  [(ngModel)]="rule.condition"
+                  class="condition-clause"></ng-select> of the following conditions are met:
+  </div>
+
+  <div class="action-wrapper">
+    <app-condition-wrapper [conventions]="conventions" [(conditions)]="rule.conditions"></app-condition-wrapper>
+  
+    <div class="instruction">
+      Perform the following actions:
+    </div>
+    <app-action-wrapper [conventions]="conventions" [(actions)]="rule.actions"></app-action-wrapper>
+
+  </div>
+</ng-container>

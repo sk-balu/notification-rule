@@ -1,0 +1,141 @@
+@import '../../../styles/variables';
+
+:host {
+  display: block;
+  height: 93%;
+  margin: 0 auto;
+  overflow-y: auto;
+  background: $white;
+  border-radius: 2px;
+  box-sizing: border-box;
+  width: 90%;
+  border-top: 2px solid $white-smoke;
+
+  .search-bar{
+    margin: 14px;
+    input{
+      height: 40px;
+      box-sizing: border-box;
+      width: 500px;
+      border: 0px;
+      background: $white-smoke;
+      font-size: 20px;
+      padding-left: 10px;
+    }
+    button{
+      margin: 0 5px;
+      color: $charcoal;
+      background: $white-smoke;
+      border: 1px $gainsboro solid;
+      padding: 5px 10px;
+      border-radius: 2px;
+      font-size: 13px;
+      outline: none;
+      cursor: pointer;
+      &:hover{
+        border: 1px $silver solid;
+        box-shadow: 1px 1px 1px $white-smoke;
+        color: $night-rider;
+        background: $white;
+      }
+      &.primary{
+        background: $godger-blue;
+        border: 1px $royal-blue solid;
+        color: $white;
+        &:hover{
+          background: $cornflower-blue;
+          border: 1px $cerulean-blue solid;
+        }
+      }
+    }
+  }
+  .rules-header,
+  .rules-list {
+    height: 50px;
+    display: table;
+    width: 100%;
+    box-sizing: border-box;
+    border-spacing: 9px 15px;
+  }
+  .col {
+    width: 20%;
+    display: table-cell;
+    vertical-align: middle;
+    &.icon{
+      width: 5%;
+      text-align: right;
+      &:last-child{
+        text-align: center;
+      }
+      img {
+        width: 15px;
+        cursor: pointer;
+      }
+    }
+  }
+  .rules-list > .col {
+    border-right: 1px solid $solitude;
+    color: $cyprus;
+    font-size: 14px;
+    &.no-border{
+      border: none;
+    }
+  }
+  .rules-list:nth-child(even){
+    background-color: $patterns-blue;
+  }
+  .rules-header > .col {
+    color: $saphire;
+    font-size: 13px;
+    font-weight: bolder;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    &.name{
+      position: relative;
+      color: $pacific-blue;
+      cursor: pointer;
+      &::before, &::after{
+        border: 4px solid transparent;
+        content: "";
+        display: block;
+        height: 0;
+        right: 5px;
+        top: 50%;
+        position: absolute;
+        width: 0;
+        opacity: 0.5;
+      }
+      &::before{
+        border-bottom-color: $dim-gray;
+        margin-top: -9px;
+      }
+      &::after{
+        border-top-color: $dim-gray;
+        margin-top: 1px;
+      }
+      &.asc::before, &.desc::after{
+        opacity: 1;
+      }
+    }
+  }
+  .pagination {
+    height: 45px;
+    padding: 22px;
+    box-sizing: border-box;
+    text-align: center;
+    .of-text{
+      font-size: 13px;
+      color: $dim-gray;
+    }
+    img{
+      height: 20px;
+      cursor: pointer;
+      margin: -5px 12px;
+      user-select: none;
+      &.disabled{
+        pointer-events: none;
+        opacity: 0.5;
+      }
+    }
+  }
+}

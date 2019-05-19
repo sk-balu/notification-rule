@@ -1,0 +1,8 @@
+<div *ngFor="let condition of conditions; let i = index">
+  <app-each-condition [conventions]="conventions" [condition]="condition" (update)="update($event, i)">
+    <div class="action-btns">
+      <img class="add-btn" src="src/assets/add.svg" (click)="addCondition()">
+      <img class="remove-btn" src="src/assets/remove.svg" (click)="removeCondition(i)">
+    </div>
+  </app-each-condition>
+</div>

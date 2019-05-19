@@ -1,0 +1,65 @@
+@import '../../../styles/variables';
+
+:host ::ng-deep{
+  width: 90%;
+  margin: auto;
+  display: block;
+  border-top: 2px solid $white-smoke;
+  padding-top: 5px;
+  .header {
+    height: 50px;
+    padding: 5px 0;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    button{
+      margin: 0 5px;
+      color: $charcoal;
+      background: $white-smoke;
+      border: 1px $gainsboro solid;
+      padding: 5px 10px;
+      border-radius: 2px;
+      font-size: 13px;
+      outline: none;
+      cursor: pointer;
+      &:hover{
+        border: 1px $silver solid;
+        box-shadow: 1px 1px 1px $white-smoke;
+        color: $night-rider;
+        background: $white;
+      }
+      &.primary{
+        background: $godger-blue;
+        border: 1px $royal-blue solid;
+        color: $white;
+        &:hover{
+          background: $cornflower-blue;
+          border: 1px $cerulean-blue solid;
+        }
+      }
+    }
+    .rule-name {
+      height: 40px;
+      box-sizing: border-box;
+      width: 500px;
+      border: 0px;
+      background: $white-smoke;
+      font-size: 20px;
+      padding-left: 10px;
+    }
+  }
+  .instruction {
+    height: 30px;
+    margin-bottom: 10px;
+    padding: 5px 0;
+    box-sizing: border-box;
+    ng-select {
+      height: 21px;
+    }
+  }
+
+  ng-select.ng-select:not(.condition-clause) {
+    &.ng-select-single .ng-select-container {
+      min-width: 150px;
+    }
+  }
+}
